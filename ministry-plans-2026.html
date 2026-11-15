@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Плани служіння 2026</title>
+<style>
+:root{--bg:#f6f1e7;--card:#fffdf8;--ink:#2a2433;--mut:#7a7385;--line:#e6dccb;--gold:#b8862b;--prayer:#6d4bb0;--thanks:#c0562f;--conf:#1f6f8b;--other:#2f7d5b;--shadow:0 6px 24px rgba(60,40,10,.08);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13111c;--card:#1d1a2a;--ink:#f1ecf8;--mut:#9a93ab;--line:#2f2a42;--gold:#e3b75c;--prayer:#a98bf0;--thanks:#f0865c;--conf:#5cc0e0;--other:#5fcf9d;--shadow:0 6px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#13111c;--card:#1d1a2a;--ink:#f1ecf8;--mut:#9a93ab;--line:#2f2a42;--gold:#e3b75c;--prayer:#a98bf0;--thanks:#f0865c;--conf:#5cc0e0;--other:#5fcf9d;--shadow:0 6px 24px rgba(0,0,0,.35)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 60px}
+header{text-align:center;margin-bottom:22px}
+.cross{color:var(--gold);font-size:26px}
+h1{margin:4px 0 2px;font-size:clamp(28px,6vw,44px);letter-spacing:.04em;font-weight:700}
+h1 span{color:var(--gold)}
+.sub{color:var(--mut);font-family:system-ui,sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.next{background:linear-gradient(135deg,var(--gold),#8a5e16);color:#fff;border-radius:16px;padding:16px 18px;margin:20px 0;box-shadow:var(--shadow);font-family:system-ui,sans-serif}
+.next small{opacity:.85;text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+.next b{display:block;font-family:Georgia,serif;font-size:20px;margin:2px 0}
+.tabs{display:flex;gap:8px;justify-content:center;margin:18px 0;flex-wrap:wrap}
+.tab{font:600 15px system-ui,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 20px;border-radius:99px;cursor:pointer}
+.tab.on{background:var(--gold);border-color:var(--gold);color:#fff}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.dow{text-align:center;font:600 11px system-ui,sans-serif;color:var(--mut);text-transform:uppercase;padding:4px 0}
+.day{aspect-ratio:1;border-radius:10px;border:1px solid transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;font:500 14px system-ui,sans-serif;position:relative;background:transparent}
+.day.sun{color:var(--thanks)}
+.day.has{background:color-mix(in srgb,var(--c) 14%,transparent);border-color:color-mix(in srgb,var(--c) 45%,transparent);font-weight:700;cursor:pointer}
+.day.has::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--c);margin-top:3px}
+.day{cursor:pointer}
+.day.brk{background-image:repeating-linear-gradient(45deg,transparent 0 4px,color-mix(in srgb,var(--mut) 20%,transparent) 4px 6px)}
+.day.reg::before{content:"";position:absolute;top:5px;right:5px;width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.day.sel{background-color:color-mix(in srgb,var(--gold) 25%,transparent);border-color:var(--gold)}
+.day.today{outline:2px solid var(--gold);outline-offset:1px}
+.wk{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.wk div{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:8px 12px;font-family:system-ui,sans-serif}
+.wk span{display:block;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.wk b{display:block;font:700 16px Georgia,serif}
+.wk em{font-style:normal;color:var(--gold);font-weight:600;font-size:14px}
+.note{margin-top:12px;font:14px system-ui,sans-serif;color:var(--mut);padding:8px 12px;border-radius:10px;background:color-mix(in srgb,var(--mut) 12%,transparent)}
+.det{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-family:system-ui,sans-serif}
+.det h3{margin:0 0 6px;font:700 17px Georgia,serif}
+.det ul{margin:0;padding-left:18px;font-size:14px}
+.day.past{opacity:.45}
+h2{margin:0 0 12px;font-size:22px}
+.ev{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line);scroll-margin-top:80px}
+.ev:first-of-type{border-top:0}
+.ev.past{opacity:.5}
+.ev.flash{animation:fl 1.4s}
+@keyframes fl{0%,60%{background:color-mix(in srgb,var(--gold) 22%,transparent)}}
+.date{min-width:62px;text-align:center;border-left:4px solid var(--c);padding-left:10px;font-family:system-ui,sans-serif}
+.date b{display:block;font:700 24px Georgia,serif;line-height:1.1}
+.date span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.body b{font-size:17px}
+.meta{font:14px system-ui,sans-serif;color:var(--mut);margin-top:3px}
+.tag{display:inline-block;font:600 11px system-ui,sans-serif;color:var(--c);border:1px solid var(--c);border-radius:99px;padding:1px 8px;margin-right:6px;vertical-align:2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font:13px system-ui,sans-serif;color:var(--mut);margin-bottom:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;background:var(--c)}
+footer{text-align:center;color:var(--mut);font:12px system-ui,sans-serif;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="cross">✝</div>
+<h1>Плани служіння <span>2026</span></h1>
+<div class="sub">Жовтень · Листопад · Грудень</div>
+</header>
+<div id="next"></div>
+<div class="legend" id="legend"></div>
+<div class="tabs" id="tabs"></div>
+<div id="view"></div>
+<footer>Світло Христове · Календар заходів</footer>
+</div>
+<script>
+const T={prayer:{n:"Піст і молитва",c:"var(--prayer)"},thanks:{n:"День Подяки",c:"var(--thanks)"},conf:{n:"Конференції",c:"var(--conf)"},other:{n:"Інше",c:"var(--other)"}};
+const MN=["","січень","лютий","березень","квітень","травень","червень","липень","серпень","вересень","жовтень","листопад","грудень"];
+const MT={10:"Жовтень",11:"Листопад",12:"Грудень"};
+const WD=["нд","пн","вт","ср","чт","пт","сб"];
+const E=[
+[10,2,0,"Одноденний піст і молитва","з 8:00 до 16:00 · «Світло Христове»","prayer"],
+[10,4,0,"День Подяки","«Ковчег Спасіння»","thanks"],
+[10,8,9,"Стратегічна Конференція УЦХВЄ","м. Луцьк","conf"],
+[10,10,0,"Обласна молодіжна конференція","ХОО","conf"],
+[10,11,0,"День Подяки","13:00 · Христа Спасителя","thanks"],
+[10,11,0,"День Подяки","10:00 · Чабанівка","thanks"],
+[10,13,0,"Зустріч відповідальних за служіння","10:00 · «Благодать Христа»","other"],
+[10,16,0,"Молитовна сторожа","20:00 · «Світло Христове»","prayer"],
+[10,18,0,"День Подяки","13:00 · «Божа Благодать»","thanks"],
+[10,18,0,"День Подяки","13:00 · смт. Чемерівці","thanks"],
+[10,25,0,"День Подяки","«Євангельський Голос»","thanks"],
+[11,6,0,"Молитовна сторожа","20:00 · «Світло Христове»","prayer"],
+[11,8,0,"День Подяки","«Світло Христове»","thanks"],
+[11,12,14,"Ретрит керівників молоді та їх помічників","ХОО","conf"],
+[11,15,0,"Молитовний об’їзд міста","16:00 · «Світло Христове»","prayer"],
+[11,22,0,"День Подяки","с. Кульчіївці","thanks"],
+[11,23,27,"5-денний піст і молитва","«Світло Христове»","prayer"],
+[11,28,29,"Гості з Лановець","","other"],
+[12,3,5,"Служіння освячення","«Світло Христове»","other"],
+[12,4,0,"Одноденний піст і молитва","з 8:00 до 16:00 · «Світло Христове»","prayer"],
+[12,18,0,"Молитовна сторожа","20:00 · «Світло Христове»","prayer"],
+[12,25,0,"Різдво Христове","","other"]
+].map(([m,d,d2,t,p,k])=>({m,d,d2:d2||d,t,p,k}));
+const REC={1:["Молодіжне зібрання","18:00"],3:["Домашні групи",""],5:["Розбір слова","18:00"],0:["Недільне служіння","10:00"]};
+const BREAKS=[[11,23,27,"5-денний піст і молитва"],[12,3,5,"служіння освячення"]];
+const GEN={10:"жовтня",11:"листопада",12:"грудня"};
+const brk=(m,d)=>BREAKS.find(b=>b[0]===m&&d>=b[1]&&d<=b[2]);
+const regOf=(m,d)=>{const w=new Date(2026,m-1,d).getDay();return(REC[w]&&!brk(m,d))?REC[w]:null};
+const now=new Date();const ty=now.getFullYear(),tm=now.getMonth()+1,td=now.getDate();
+const ts=(m,d)=>new Date(2026,m-1,d,23,59);
+const isPast=e=>ts(e.m,e.d2)<now;
+const el=id=>document.getElementById(id);
+el("legend").innerHTML=Object.values(T).map(t=>`<span style="--c:${t.c}"><i></i>${t.n}</span>`).join("")+`<span style="--c:var(--gold)"><i></i>Щотижневі зібрання</span>`;
+const nx=E.filter(e=>!isPast(e)).sort((a,b)=>ts(a.m,a.d)-ts(b.m,b.d))[0];
+if(nx){const dt=new Date(2026,nx.m-1,nx.d);const rng=nx.d2>nx.d?`${nx.d}–${nx.d2}`:nx.d;
+el("next").innerHTML=`<div class="next"><small>Найближчий захід</small><b>${nx.t}</b>${rng} ${MN[nx.m].replace(/ь$/,"я").replace("овтень","овтня").replace("листопад","листопада")} · ${nx.p||""}</div>`;}
+let cur=(ty===2026&&tm>=10&&tm<=12)?tm:11;
+function tabs(){el("tabs").innerHTML=[10,11,12].map(m=>`<button class="tab ${m===cur?"on":""}" onclick="cur=${m};render()">${MT[m]}</button>`).join("")}
+function render(){
+tabs();
+const m=cur,first=new Date(2026,m-1,1),len=new Date(2026,m,0).getDate();
+const off=(first.getDay()+6)%7;
+const evs=E.filter(e=>e.m===m).sort((a,b)=>a.d-b.d);
+let g=["пн","вт","ср","чт","пт","сб","нд"].map(x=>`<div class="dow">${x}</div>`).join("")+"<div></div>".repeat(off);
+for(let d=1;d<=len;d++){
+const de=evs.filter(e=>d>=e.d&&d<=e.d2);
+const sun=new Date(2026,m-1,d).getDay()===0;
+const past=ts(m,d)<now;
+const c=de.length?T[de[0].k].c:"";
+g+=`<div class="day ${sun?"sun":""} ${de.length?"has":""} ${regOf(m,d)?"reg":""} ${brk(m,d)?"brk":""} ${(sel&&sel[0]===m&&sel[1]===d)?"sel":""} ${past?"past":""} ${(m===tm&&d===td&&ty===2026)?"today":""}" ${de.length?`style="--c:${c}"`:""} onclick="pick(${m},${d})">${d}</div>`;}
+el("view").innerHTML=`<div class="card"><div class="grid">${g}</div>${detail(m)}</div>
+<div class="card"><h2>Щотижневі зібрання</h2><div class="wk">${[[1,"Понеділок"],[3,"Середа"],[5,"П’ятниця"],[0,"Неділя"]].map(([w,n])=>`<div><span>${n}</span><b>${REC[w][0]}</b><em>${REC[w][1]}</em></div>`).join("")}</div>${BREAKS.filter(b=>b[0]===m).map(b=>`<div class="note">Звичайних зібрань немає ${b[1]}–${b[2]} ${GEN[m]} — ${b[3]}.</div>`).join("")}</div>
+<div class="card"><h2>Заходи · ${MT[m]}</h2>${evs.map(e=>{const w=WD[new Date(2026,m-1,e.d).getDay()];const rng=e.d2>e.d?`${e.d}–${e.d2}`:e.d;
+return `<div class="ev ${isPast(e)?"past":""}" id="e${e.m}-${e.d}" style="--c:${T[e.k].c}"><div class="date"><b>${rng}</b><span>${e.d2>e.d?MN[m].slice(0,3):w}</span></div><div class="body"><span class="tag">${T[e.k].n}</span><b>${e.t}</b>${e.p?`<div class="meta">${e.p}</div>`:""}</div></div>`}).join("")}</div>`;}
+let sel=(ty===2026&&tm>=10&&tm<=12)?[tm,td]:null;
+function pick(m,d){sel=(sel&&sel[0]===m&&sel[1]===d)?null:[m,d];render()}
+function detail(m){
+if(!sel||sel[0]!==m)return"";const d=sel[1];
+const de=E.filter(e=>e.m===m&&d>=e.d&&d<=e.d2);const r=regOf(m,d);const b=brk(m,d);
+const li=de.map(e=>`<li><b>${e.t}</b>${e.p?" — "+e.p:""}</li>`);
+if(r)li.push(`<li>${r[0]}${r[1]?" — "+r[1]:""}</li>`);
+if(b)li.push(`<li>Звичайні зібрання не проводяться (${b[3]})</li>`);
+if(!li.length)li.push("<li>Заходів немає</li>");
+return `<div class="det"><h3>${d} ${GEN[m]}, ${WD[new Date(2026,m-1,d).getDay()]}</h3><ul>${li.join("")}</ul></div>`}
+function go(m,d){const x=document.getElementById(`e${m}-${d}`);if(x){x.scrollIntoView({behavior:"smooth",block:"center"});x.classList.remove("flash");void x.offsetWidth;x.classList.add("flash")}}
+render();
+</script>
+</body>
+</html>
