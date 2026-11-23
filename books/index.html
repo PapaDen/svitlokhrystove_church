@@ -15,7 +15,7 @@ body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-a
 .hero{text-align:center;padding:44px 20px 28px;background:radial-gradient(900px 300px at 50% -80px,color-mix(in srgb,var(--accent2) 35%,transparent),transparent)}
 .hero h1{margin:0;font:700 clamp(28px,5vw,42px)/1.15 Georgia,"Times New Roman",serif;letter-spacing:.2px}
 .hero p{margin:8px 0 0;color:var(--muted)}
-.tools{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 16px}
+.tools{transition:transform .25s ease;position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 16px}
 .bar{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 input,select{padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--text);font:inherit;outline:none}
 input:focus,select:focus{border-color:var(--accent2);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent2) 25%,transparent)}
@@ -43,6 +43,7 @@ main{max-width:1100px;margin:0 auto;padding:8px 16px 48px}.grid{display:grid;gri
 .out .photos,.out .title{opacity:.55}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 32px}
+@media (max-width:700px){.tools.hide{transform:translateY(-100%)}}
 </style>
 </head>
 <body>
@@ -50,7 +51,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 32px}
 <h1>В світлі</h1>
 <p>Християнська література, подарунки та декор</p>
 </div>
-<div class="tools">
+<div class="tools" id="tools">
 <div class="bar">
 <input id="q" type="search" placeholder="Пошук: назва, автор, слово з опису…">
 <select id="sort">
@@ -178,6 +179,16 @@ function render() {
   $("stock").addEventListener(ev, render);
 });
 render();
+
+// на телефоні: панель ховається при прокрутці вниз і з'являється при прокрутці вгору
+let lastY = 0;
+addEventListener("scroll", () => {
+  const y = window.scrollY;
+  if (document.activeElement !== $("q")) {
+    $("tools").classList.toggle("hide", y > lastY && y > 120);
+  }
+  lastY = y;
+}, {passive: true});
 </script>
 </body>
 </html>
